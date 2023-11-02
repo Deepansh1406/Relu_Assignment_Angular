@@ -1,0 +1,68 @@
+<div class="register-container">
+  <div [formGroup]="registerForm" class="register-content">
+      <p class="title">SignUp</p>
+      
+      <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input 
+            formControlName="username" 
+            matInput placeholder="Username" type="text">
+          <mat-error *ngIf="registerForm.controls['username'].hasError('required')">
+              Username is required
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls['username'].hasError('email')">
+              Invalid Email
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Phone number</mat-label> 
+          <input 
+            formControlName="phoneNumber"
+            matInput type="number"
+            placeholder="Phone Number"> 
+          <!-- <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon> -->
+          <mat-error *ngIf="registerForm.controls['phoneNumber'].hasError('required')">
+            Phone number is Required 
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label> 
+          <input 
+            formControlName="password"
+            matInput [type]="hide ? 'password' : 'text'" 
+            placeholder="Password"> 
+          <mat-icon (click)="hide = !hide" matSuffix>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+            Password is Required 
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label> 
+          <input 
+            formControlName="confirmPassword"
+            matInput [type]="hideConfirmPassword ? 'password' : 'text'" 
+            placeholder="Confirm Password"> 
+          <mat-icon (click)="hideConfirmPassword  =!hideConfirmPassword" matSuffix>{{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+          <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required')">
+            Confirm Password is Required 
+          </mat-error>
+      </mat-form-field>
+
+
+
+      
+      <p class="alternative">Already have an Account? <span [routerLink]="['/login']">Login</span></p>
+      <button (click)="registerWithEmailAndPassword()"
+        [disabled]="registerForm.invalid || registerForm.get('password')?.value !== registerForm.get('confirmPassword')?.value" class="btn btnFill">Register</button>
+
+      <div class="or-line-divider">
+          <p class="or">Or</p>
+      </div>
+      <div class="google-card">
+          <app-google-login-card></app-google-login-card>
+      </div>
+  </div>
+</div>

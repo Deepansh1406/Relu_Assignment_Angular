@@ -1,0 +1,65 @@
+
+.register-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.register-content{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    font-size:34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+
+}
+.title-intro{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.forgot-label{
+    font-size: 16px;
+    color: #0152D5;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+
+}
+.alternative{
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+    text-align: center;
+    margin-top: 16px;
+}
+    span{
+        color: #0152D5;
+        cursor: pointer;
+    }
+.or-line-divider{
+    border-top: 1px solid rgba(0,0,0,0.5);
+    position: relative;
+    margin-top: 40px;
+}
+.or{
+        position: absolute;
+        background: white;
+        width: 50px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        left: 50%;
+    }
+
+    .google-card{
+        margin-top: 20px;
+        
+    }
+

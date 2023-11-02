@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn{
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+
+
+}
+.btnFill{
+    background: #0152D5;
+    color: white;
+}
+
+button:disabled {
+    background: rgba(0, 0, 0, 0.4); /* Use rgba(0, 0, 0, 0.4) for black with 40% opacity */
+    /* Add other styling as needed */
+}
+
